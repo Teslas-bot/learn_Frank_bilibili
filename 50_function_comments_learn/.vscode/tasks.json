@@ -1,0 +1,32 @@
+{
+	"tasks": [
+		{
+			"type": "cppbuild",	// 任务执行的类型是cppbuild
+			"label": "gcc.exe build active file",	// 任务的名字
+			"command": "D:\\Environment\\mingw64\\bin\\gcc.exe",
+			"args": [
+				"-g",
+				// "${file}",	// 当前文件名
+				"*.c",	// 当前文件夹的所有.c文件都编译
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe",	// 生成的可执行文件的名称：当前文件名(去掉扩展名)
+				"-lpthread"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"	// 使用gcc捕获错误
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+				// 任务分组，因为是 tasks 而不是 task, 意味着可以连着执行很多任务
+				// 如果任务分组是 build, 可以用 'run build task' 来运行
+				// 如果任务分组是 test, 可以用 'run test task' 来运行
+			},
+			"detail": "编译器: D:\\Environment\\mingw64\\bin\\gcc.exe"
+		}
+	],
+	"version": "2.0.0"
+}
