@@ -8,8 +8,11 @@
 				"-g",
 				// "${file}",	// 当前文件名
 				"*.c",	// 当前文件夹的所有.c文件都编译
+				"-I",
+                "${workspaceFolder}\\include",
+                "${workspaceFolder}\\execution\\**",
 				"-o",
-				"${fileDirname}\\${fileBasenameNoExtension}.exe",	// 生成的可执行文件的名称：当前文件名(去掉扩展名)
+				"${workspaceFolder}\\code_exe\\${fileBasenameNoExtension}.exe",	// 生成的可执行文件的名称：当前文件名(去掉扩展名)
 				"-lpthread"
 			],
 			"options": {
